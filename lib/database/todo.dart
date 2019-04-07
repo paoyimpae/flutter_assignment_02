@@ -1,6 +1,6 @@
 class Todo {
   int id;
-  String message;
-  int check;
+  String title;
+  int done;
   Todo();
 }

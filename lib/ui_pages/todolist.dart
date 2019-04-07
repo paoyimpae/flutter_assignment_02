@@ -42,7 +42,6 @@ class TodoListState extends State<TodoList> {
   }
       
   int page = 0;
-  bool checkValue = false;
   @override
   Widget build(BuildContext context) {
   List buttonList = 
@@ -77,9 +76,8 @@ class TodoListState extends State<TodoList> {
             itemBuilder: (context, index) {
                 // debugPrint("Todo : Now length is " + snapshot.data.length.toString());
                 return CheckboxListTile(
-                  title: Text(snapshot.data[index].message),
-                  value: snapshot.data[index].check == 1 ? true : false,
-                  // value: checkValue,
+                  title: Text(snapshot.data[index].title),
+                  value: snapshot.data[index].done == 1 ? true : false,
                   onChanged: (bool value) {
                     setState(() {
                       setTodo(value, snapshot.data[index].id);
@@ -106,9 +104,8 @@ class TodoListState extends State<TodoList> {
             itemBuilder: (context, index) {
                 // debugPrint("Todo : Now length is " + snapshot.data.length.toString());
                 return CheckboxListTile(
-                  title: Text(snapshot.data[index].message),
-                  value: snapshot.data[index].check == 1 ? true : false,
-                  // value: checkValue,
+                  title: Text(snapshot.data[index].title),
+                  value: snapshot.data[index].done == 1 ? true : false,
                   onChanged: (bool value) {
                     setState(() {
                       setTodo(value, snapshot.data[index].id);

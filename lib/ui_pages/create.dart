@@ -13,7 +13,7 @@ class CreateList extends StatefulWidget {
 
 class CreateListState extends State<CreateList> {
   final _formkey = GlobalKey<FormState>();
-  String message;
+  String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,20 +31,13 @@ class CreateListState extends State<CreateList> {
               ),
               keyboardType: TextInputType.text,
               validator: (value) {
-                message = value;
+                title = value;
                 if (value.isEmpty) {
                   return 'Please fill subject';
-                } 
-                // else {
-                //   Todo todo = Todo();
-                //   todo.message = message;
-                //   todo.check = 0;
-                //   DataBaseHelper databaseHelper = DataBaseHelper();
-                //   databaseHelper.addTodoDB(todo);
-                // }
+                }
               },
               onSaved: (value) {
-                message = value;
+                title = value;
               },
             ),
             
@@ -75,8 +68,8 @@ class CreateListState extends State<CreateList> {
       return null;
     }
     Todo todo = Todo();
-    todo.message = message;
-    todo.check = 0;
+    todo.title = title;
+    todo.done = 0;
     DataBaseHelper databaseHelper = DataBaseHelper();
     databaseHelper.addTodoDB(todo);
   }
