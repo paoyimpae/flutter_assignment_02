@@ -159,8 +159,8 @@ class TodoListState extends State<TodoList> {
                 ),  
               ),
               ],   
-              labelColor: Colors.pink,
-              indicatorColor: Colors.pink,
+              labelColor: Colors.blue,
+              indicatorColor: Colors.blue,
               onTap: (value) {
                 setState(() {
                   page = value;
@@ -172,7 +172,7 @@ class TodoListState extends State<TodoList> {
         ),
       ),
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.blue,
       ),
     );
   }
